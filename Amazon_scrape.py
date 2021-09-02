@@ -20,3 +20,10 @@ page = requests.get(url, headers=headers)
 soup = BeautifulSoup(page.content, "html.parser")
 
 soup1 = BeautifulSoup(soup.prettify(), "html.parser")
+
+product_title = soup1.find(id="productTitle").get_text()
+product_price = soup1.find(id="priceblock_ourprice").get_text()
+
+print(product_title.strip())
+print(product_price.strip()[1:])
+
