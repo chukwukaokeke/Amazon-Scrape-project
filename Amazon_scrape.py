@@ -3,9 +3,6 @@ import requests
 import time
 from datetime import date
 import csv
-import smtplib  # for sending emails
-
-
 
 
 def check_price():
@@ -34,12 +31,10 @@ def check_price():
     # Get current date
     mydate = date.today()
     d1 = mydate.strftime("%m/%d/%y")
-    print(d1)
 
     # Get current time
     mytime = time.localtime()
     t1 = time.strftime("%I:%M %p", mytime)
-    print(t1)
 
     # Appending data to CSV file
     data = [title, price, d1, t1]
@@ -47,9 +42,12 @@ def check_price():
         writer = csv.writer(file1)
         writer.writerow(data)
 
-#Creating and inserting header in CSV file
-header = ['Title','Price','Date','Time']
-with open('Amazondatafile.csv', 'w') as csvfile:
+    print("Data collected for " + d1 + " " + t1)
+
+
+# Creating and inserting header in CSV file
+header = ['Title', 'Price', 'Date', 'Time']
+with open('Amazondatafile.csv', 'w', newline='') as csvfile:
     headerwriter = csv.writer(csvfile)
     headerwriter.writerow(header)
 
