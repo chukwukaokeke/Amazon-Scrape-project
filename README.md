@@ -5,5 +5,4 @@ The script is set up to run in a loop, with a delay of 1 second between each ite
 
 This script could be useful for anyone interested in keeping track of the price of a product over time. It demonstrates how to use the requests and BeautifulSoup libraries to scrape data from a website, how to work with CSV files in Python, and how to use the time and datetime modules to manage time-based tasks.
 
-Libraries Used:
-BeautifulSoup,Requests,time,datetime,csv
+
